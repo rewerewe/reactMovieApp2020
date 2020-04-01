@@ -6,12 +6,13 @@ class App extends React.Component {
     count: 0
   };
 
+  // state를 set할때, react에서 외부의 상태에 의존하지 않는 가장 좋은 방법! 
   add = () => {
-    this.setState({ count: this.state.count + 1 });
+    this.setState(current => ({ count: current.count + 1 }));
   }
 
   minus = () => {
-    this.setState({count: this.state.count -1});
+    this.setState(current => ({count: current.count - 1}));
   }
 
   render() {
